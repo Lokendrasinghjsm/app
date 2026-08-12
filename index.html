@@ -1,32 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Script Fetch</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-
-    <h2>Apna Data Bhejein</h2>
-    <!-- Yeh form data Google Script ko bhejega -->
-    <form name="google-sheet-form">
-        <input type="text" name="Name" placeholder="Apna Naam likhein" required>
-        <input type="email" name="Email" placeholder="Email likhein" required>
-        <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        // Aapka Google Apps Script URL
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbygPKMQepwhRFF3rrJRkNdx25tgGiEc85YpvQ5UTUXgniNAGld9GKcsFLVRj5u9dFqI/exec';
-        const form = document.forms['google-sheet-form'];
-
-        form.addEventListener('submit', e => {
-            e.preventDefault(); // Page ko reload hone se rokna
-            
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => alert("Data successfully bhej diya gaya!"))
-                .catch(error => console.error('Error aaya:', error.message));
-        });
-    </script>
+  <iframe src="https://script.google.com/macros/s/AKfycbygPKMQepwhRFF3rrJRkNdx25tgGiEc85YpvQ5UTUXgniNAGld9GKcsFLVRj5u9dFqI/exec"></iframe>
 </body>
 </html>
